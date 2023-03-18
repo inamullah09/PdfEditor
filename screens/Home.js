@@ -9,7 +9,7 @@ import { Pressable } from 'react-native'
 import { TouchableOpacity } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
 
-export default function Home() {
+export default function Home({navigation}) {
     const [options] = useState([
         {
             choiceId: 1,
@@ -65,7 +65,7 @@ export default function Home() {
       columnWrapperStyle={{justifyContent: 'center'}}
        data={options}
        renderItem={( option ) => 
-       <TouchableOpacity>
+       <TouchableOpacity onPress={() => {navigation.navigate("Upload")}}>
        <Option text={option.item.name} />
        </TouchableOpacity>
        }
