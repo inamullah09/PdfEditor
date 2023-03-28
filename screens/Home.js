@@ -13,49 +13,28 @@ export default function Home({navigation}) {
     const [options] = useState([
         {
             choiceId: 1,
-            name: 'PDF to Word'
+            name: 'DOC to PDF'
         },
         {
             choiceId: 2,
-            name: 'PDF to JPG'
+            name: 'PDF to DOC'
         },
         {
             choiceId: 3,
-            name: 'Extract PDF'
+            name: 'EXCEL to PDF'
         },
         {
             choiceId: 4,
-            name: 'Merge PDF'
+            name: 'Compress File'
         },
         {
             choiceId: 5,
-            name: 'Split PDF'
+            name: 'Extract File'
         },
         {
             choiceId: 6,
-            name: 'Add Pages'
+            name: 'PDF Splitter'
         },
-        {
-            choiceId: 7,
-            name: 'Remove Pages'
-        },
-        {
-            choiceId: 8,
-            name: 'Word to PDF'
-        },
-        {
-            choiceId: 9,
-            name: 'Excel to PDF'
-        },
-        {
-            choiceId: 10,
-            name: 'PPTX to PDF'
-        },
-        {
-            choiceId: 11,
-            name: 'Compress PDF'
-        },
-        
     ])
   return (
     <View style={styles.container}>
@@ -65,7 +44,9 @@ export default function Home({navigation}) {
       columnWrapperStyle={{justifyContent: 'center'}}
        data={options}
        renderItem={( option ) => 
-       <TouchableOpacity onPress={() => {navigation.navigate("Upload")}}>
+       <TouchableOpacity onPress={() => {navigation.navigate("Upload", {
+        choiceId: option.item.choiceId
+       })}}>
        <Option text={option.item.name} />
        </TouchableOpacity>
        }

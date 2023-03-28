@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import Download from './screens/Download';
 import Home from './screens/Home';
 import Splash from './screens/Splash';
 import Upload from './screens/Upload';
@@ -22,6 +23,7 @@ export default function App() {
         <Stack.Screen name="Splash" component={Splash} header />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Upload" component={Upload} />
+        <Stack.Screen name="Download" component={Download} />
       </Stack.Navigator>
     </NavigationContainer>
     </SafeAreaProvider>
